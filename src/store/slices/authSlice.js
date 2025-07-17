@@ -21,7 +21,7 @@ export const loginUser = createAsyncThunk(
   "auth/login",
   async (credentials, { rejectWithValue }) => {
     // For development - use mock data instead of API call
-    if (import.meta.env.DEV || || import.meta.env.VITE_USE_MOCK_DATA === "true") {
+    if (import.meta.env.DEV || import.meta.env.VITE_USE_MOCK_DATA === "true") {
       // Simulate network delay
       await new Promise((resolve) => setTimeout(resolve, 500));
 

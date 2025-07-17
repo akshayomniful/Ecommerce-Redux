@@ -58,7 +58,8 @@ export const store = configureStore({
       .concat(offlineMiddleware)
       .concat(auditMiddleware)
       .concat(realTimeMiddleware),
-  devTools: import.meta.env.DEV,
+  devTools:
+    import.meta.env.DEV || import.meta.env.VITE_USE_DEV_TOOLS === "true", // Use Vite's environment variable format
 });
 
 export const persistor = persistStore(store);
